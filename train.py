@@ -4,8 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import sklearn.metrics as metrics
 from sklearn.metrics import r2_score
-import numpy as np
 import matplotlib.pyplot as plt
+import json
 
 input_file = "data/yellow_tripdata_2021-01.csv"
 
@@ -44,6 +44,9 @@ print(test_y[:5])
 with open("metric.txt", 'w') as outfile:
         outfile.write("mse: %2.1f\n" % mse)
         outfile.write("r2: %2.1f\n" % r2)
+
+with open("metrics.json", 'w') as outfile:
+        json.dump({ "mse": mse, "r2": r2}, outfile)
 
 plt.scatter(prediction[:30], prediction[:30]-train_y[:30], c='blue', marker='o', label='training data')
 plt.scatter(train_prediction[:30], train_prediction[:30]-test_y[:30], c='lightgreen', marker='o', label='test data')
