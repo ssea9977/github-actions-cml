@@ -41,7 +41,7 @@ print(prediction[:5])
 print("LABEL")
 print(test_y[:5])
 
-with open("metrics.txt", 'w') as outfile:
+with open("metric.txt", 'w') as outfile:
         outfile.write("mse: %2.1f\n" % mse)
         outfile.write("r2: %2.1f\n" % r2)
 
