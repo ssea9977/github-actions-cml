@@ -6,9 +6,8 @@ import sklearn.metrics as metrics
 from sklearn.metrics import r2_score
 import numpy as np
 import matplotlib.pyplot as plt
-import pickle
 
-input_file = "/home/ocean/mlops/taxi-price/yellow_tripdata_2021-01.csv"
+input_file = "C:\\home\\ocean\\mlops\\taxi-price\\yellow_tripdata_2021-01.csv"
 
 df = pd.read_csv(input_file, header=0, low_memory=False)
 df = df.loc[(df["total_amount"] < 20) & (df["trip_distance"] < 100)]
