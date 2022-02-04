@@ -7,7 +7,7 @@ from sklearn.metrics import r2_score
 import numpy as np
 import matplotlib.pyplot as plt
 
-input_file = "C:\\github-actions-cml\\yellow_tripdata_2021-01.csv"
+input_file = "data/yellow_tripdata_2021-01.csv"
 
 df = pd.read_csv(input_file, header=0, low_memory=False)
 df = df.loc[(df["total_amount"] < 20) & (df["trip_distance"] < 100)]
